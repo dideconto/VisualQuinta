@@ -7,11 +7,11 @@ import { Produto } from "../models/Produto";
     providedIn: "root",
 })
 export class ProdutoService {
-    private baseURL = "http://localhost:5000/api/produto/";
+    private baseURL = "http://localhost:5000/api/produto";
 
     constructor(private http: HttpClient) {}
 
     list(): Observable<Produto[]> {
-        return this.http.get<Produto[]>(`${this.baseURL}list`);
+        return this.http.get<Produto[]>(`${this.baseURL}/list`);
     }
 }
