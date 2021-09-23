@@ -16,6 +16,10 @@ const routes: Routes = [
         path: "produto/cadastrar",
         component: ProdutoCadastrarComponent,
     },
+    {
+        path: "produto/cadastrar/:id",
+        component: ProdutoCadastrarComponent,
+    },
 ];
 
 @NgModule({

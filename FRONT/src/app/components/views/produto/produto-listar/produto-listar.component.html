@@ -3,5 +3,7 @@
 <ol>
     <li *ngFor="let produto of produtos">
         {{ produto.nome }}
+        <a routerLink="/produto/cadastrar/{{ produto.id }}">Editar</a>
+        <a [routerLink]="['/produto/cadastrar/', produto.id]">Editar</a>
     </li>
 </ol>

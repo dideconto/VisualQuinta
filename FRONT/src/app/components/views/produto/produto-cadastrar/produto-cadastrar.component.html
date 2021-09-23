@@ -15,3 +15,4 @@
     <input type="text" name="preco" [(ngModel)]="preco" />
 </div>
 <button (click)="cadastrar()">Cadastrar</button>
+<button *ngIf="id" (click)="editar()">Salvar</button>
