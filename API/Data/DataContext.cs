@@ -11,5 +11,6 @@ namespace API.Data
 
         //Lista de propriedades que vão definir quais classes vão virar tabelas no DB
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
     }
 }

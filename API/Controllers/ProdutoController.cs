@@ -4,6 +4,7 @@ using System.Linq;
 using API.Data;
 using API.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
@@ -20,6 +21,8 @@ namespace API.Controllers
         [Route("create")]
         public IActionResult Create([FromBody] Produto produto)
         {
+            int categoriaId = produto.CategoriaId;
+            produto.Categoria = _context.Categorias.Find(categoriaId);
             _context.Produtos.Add(produto);
             _context.SaveChanges();
             return Created("", produto);
@@ -28,7 +31,10 @@ namespace API.Controllers
         //GET: api/produto/list
         [HttpGet]
         [Route("list")]
-        public IActionResult List() => Ok(_context.Produtos.ToList());
+        public IActionResult List() =>
+            Ok(_context.Produtos
+                .Include(p => p.Categoria)
+                .ToList());
 
         //GET: api/produto/getbyid/1
         [HttpGet]
@@ -52,6 +58,10 @@ namespace API.Controllers
             //Where
             //Expressão lambda
             //Buscar o primeiro produto pelo nome
+            // Produto produto = _context.Produtos.FirstOrDefault
+            // (
+            //     produto => produto.CategoriaId == 1
+            // );
             Produto produto = _context.Produtos.FirstOrDefault
             (
                 produto => produto.Nome == name
