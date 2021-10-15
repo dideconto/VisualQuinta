@@ -1,0 +1,9 @@
+.container {
+    height: calc(100% - 64px);
+}
+.content {
+    padding: 16px;
+}
+.icon {
+    margin-right: 10px;
+}

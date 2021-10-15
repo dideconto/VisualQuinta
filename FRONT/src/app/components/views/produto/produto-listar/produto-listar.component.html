@@ -1,10 +1,32 @@
-<a routerLink="/produto/cadastrar">Novo Produto</a>
-
-<ol>
-    <li *ngFor="let produto of produtos">
-        {{ produto.nome }} -
-        {{ produto.categoria!.nome }}
-        <!-- <a routerLink="/produto/cadastrar/{{ produto.id }}">Editar</a> -->
-        <a [routerLink]="['/produto/cadastrar/', produto.id]">Editar</a>
-    </li>
-</ol>
+<a mat-raised-button color="primary" routerLink="/produto/cadastrar">
+    <mat-icon> add </mat-icon>
+    Novo Produto
+</a>
+<table mat-table [dataSource]="produtos" class="table mat-elevation-z8">
+    <!-- Coluna do Id -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>#</th>
+        <td mat-cell *matCellDef="let produto">{{ produto.id }}</td>
+    </ng-container>
+    <!-- Coluna do Nome -->
+    <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let produto">{{ produto.nome }}</td>
+    </ng-container>
+    <!-- Coluna do Nome -->
+    <ng-container matColumnDef="editar">
+        <th mat-header-cell *matHeaderCellDef>Editar</th>
+        <td mat-cell *matCellDef="let produto">
+            <a
+                color="accent"
+                mat-raised-button
+                [routerLink]="['/produto/cadastrar/', produto.id]"
+            >
+                <mat-icon> edit </mat-icon>
+                Editar
+            </a>
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="colunasExibidas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunasExibidas"></tr>
+</table>
