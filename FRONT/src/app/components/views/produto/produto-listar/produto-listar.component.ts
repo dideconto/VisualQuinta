@@ -9,7 +9,15 @@ import { ProdutoService } from "src/app/services/produto.service";
 })
 export class ProdutoListarComponent implements OnInit {
     produtos: Produto[] = [];
-    colunasExibidas: string[] = ["id", "nome", "editar"];
+    colunasExibidas: String[] = [
+        "id",
+        "nome",
+        "descricao",
+        "preco",
+        "quantidade",
+        "categoria",
+        "editar",
+    ];
 
     constructor(private service: ProdutoService) {}
 

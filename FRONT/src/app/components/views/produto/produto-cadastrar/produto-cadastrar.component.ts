@@ -39,6 +39,8 @@ export class ProdutoCadastrarComponent implements OnInit {
                     this.descricao = produto.descricao;
                     this.quantidade = produto.quantidade;
                     this.preco = produto.preco;
+                    this.categoriaId = produto.categoriaId;
+                    console.log(produto.categoriaId);
                 });
             }
         });
