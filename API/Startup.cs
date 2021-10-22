@@ -42,7 +42,7 @@ namespace API
             //Adicionar todas as injeções de dependências da sua aplicação
             services.AddDbContext<DataContext>
             (
-                options => options.UseInMemoryDatabase("database")
+                options => options.UseSqlServer(Configuration.GetConnectionString("Azure"))
             );
 
             services.AddControllers();

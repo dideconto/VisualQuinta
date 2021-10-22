@@ -6,6 +6,7 @@ namespace API.Data
     //Utilizar o EF para nossa aplicação
     public class DataContext : DbContext
     {
+        //Entity Framework - Code First
         //Construtor para definir como será conectado com o BD
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
