@@ -13,11 +13,14 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from "./app-routing.module";
+import { MatGridListModule } from "@angular/material/grid-list";
 //Imports dos componentes
 import { AppComponent } from "./app.component";
 import { TemplateComponent } from "./components/template/template.component";
 import { ProdutoCadastrarComponent } from "./components/views/produto/produto-cadastrar/produto-cadastrar.component";
 import { ProdutoListarComponent } from "./components/views/produto/produto-listar/produto-listar.component";
+import { IndexComponent } from "./components/views/home/index/index.component";
+import { CarrinhoComponent } from "./components/views/home/carrinho/carrinho.component";
 
 @NgModule({
     declarations: [
@@ -25,6 +28,8 @@ import { ProdutoListarComponent } from "./components/views/produto/produto-lista
         ProdutoCadastrarComponent,
         ProdutoListarComponent,
         TemplateComponent,
+        IndexComponent,
+        CarrinhoComponent,
     ],
     imports: [
         BrowserModule,
@@ -41,6 +46,7 @@ import { ProdutoListarComponent } from "./components/views/produto/produto-lista
         MatCardModule,
         MatSelectModule,
         MatInputModule,
+        MatGridListModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
