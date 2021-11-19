@@ -1,0 +1,29 @@
+### Cadastrar usuário
+POST https://localhost:5001/api/usuario/create
+Content-Type: application/json
+
+{
+    "Email": "asd2@asd2.com",
+    "Senha" : "123",
+    "Permissao": "user"
+}
+
+### Listar todos produtos
+GET https://localhost:5001/api/usuario/login
+Content-Type: application/json
+
+{
+    "Email": "asd2@asd2.com",
+    "Senha" : "123"
+}
+
+### Acesso sem autenticação
+GET https://localhost:5001/api/usuario/sem
+
+### Acesso com autenticação
+GET https://localhost:5001/api/usuario/com
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFzZEBhc2QuY29tIiwicm9sZSI6ImFkbSIsIm5iZiI6MTYzNzI4MDk0MSwiZXhwIjoxNjM3Mjg4MTQxLCJpYXQiOjE2MzcyODA5NDF9.w5D98jBTzGB7JoogAxaFgkZhgZYsVziFeGdYNYWOvho
+
+### Acesso com permissão
+GET https://localhost:5001/api/usuario/permissao
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFzZDJAYXNkMi5jb20iLCJyb2xlIjoidXNlciIsIm5iZiI6MTYzNzI4MTY1OSwiZXhwIjoxNjM3Mjg4ODU5LCJpYXQiOjE2MzcyODE2NTl9.nL35czanfDwyX-Dha-Fq8BSho05J6bZXB0lHnY6j9QQ
